@@ -15,9 +15,21 @@ describe("getPrimes", function() {
    	 });
    })
 
-   describe("handle non-integer values", function() {
+   describe("handle string values", function() {
    	 it("should return undefined when given a string", function() {
    	 	assert.equal(mainApp.getPrimes('hello'), 'undefined');
-   	 })
+   	 });
+   })
+
+   describe("handle non-integer(float) values", function() {
+   	 it("should return undefined when given a float", function() {
+   	 	assert.equal(mainApp.getPrimes(4.5), 'undefined');
+   	 });
+   })
+
+   describe("handle empty input", function() {
+   	it ("should return undefined when given an empty input", function() {
+   		assert.equal(mainApp.getPrimes(''), 'undefined');
+   	})
    })
 })

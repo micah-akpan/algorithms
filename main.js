@@ -1,5 +1,5 @@
 function getPrimes(n) {
-	if (n < 0 || typeof n == 'string') {
+	if (n < 0 || typeof n == 'string' || n % 1 !== 0) {
 		return 'undefined';
 	} else {
 		let primes = [];
