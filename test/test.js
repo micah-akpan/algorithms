@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const mainApp = require('../src/main.js')
+const mainApp = require('../main.js')
 
 describe("getPrimes", function() {
 

@@ -1,12 +1,17 @@
 function getPrimes(n) {
-	let primes = [];
-	for (let i = 2; i < n; i++) {
-		if (isPrime(i)) {
-			primes.push(i);
-		}
+	if (n < 0 || typeof n == 'string') {
+		return 'undefined';
+	} else {
+		let primes = [];
+	    for (let i = 2; i < n; i++) {
+	    	if (isPrime(i))
+			    primes.push(i);
 	}
 
 	return primes;
+
+}	
+	
 }
 
 
