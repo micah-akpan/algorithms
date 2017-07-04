@@ -51,8 +51,8 @@ class Guitar extends MusicalInstrument {
 
 class Drums extends MusicalInstrument{
 
-    constructor(family, isElectricallyOperated, placeOfOrigin, accessories, materials) {
-        super(family, isElectricallyOperated, placeOfOrigin, accessories, materials);
+    constructor(name, family, isElectricallyOperated, placeOfOrigin, accessories, materials) {
+        super(name, family, isElectricallyOperated, placeOfOrigin, accessories, materials);
         this.accessories = accessories;
     }
 
@@ -71,12 +71,17 @@ class Saxophone extends MusicalInstrument {
     }
 }
 
-// drive test of the classes
+// drive tests of the classes
 
-const electric = new Guitar("Electric Guitar", "strings", false, "Italy",
+const electric = new Guitar("Electric Guitar", "string", false, "Italy",
                            "electric", "electricity and amplifier", ["wood"])
 
-const drums = new Drums("percussion", false, "nil", "sticks", ["wood", "aluminium"]);
+const drums = new Drums("Drums", "percussion", false, "nil", "sticks", ["wood", "aluminium"]);
+const piano = new Piano("Piano", "acoustic string", true, "Italy", ["Hard maple wood"])
 console.log(electric);
 electric.play();
 console.log(drums);
+console.log(drums.getFamily());
+drums.play();
+
+console.log(piano);
