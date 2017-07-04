@@ -16,14 +16,14 @@ describe("getPrimes", function() {
    })
 
 
-   describe("handle value input of n", function() {
+   describe("handle valid input of n", function() {
       it ("should return prime numbers from 0 to n", function() {
          assert.deepEqual(mainApp.getPrimes(40), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37])
       });
    })
 
 
-   describe("handle value input of n", function() {
+   describe("handle valid input of n", function() {
       it ("should return prime numbers from 0 to n", function () {
          assert.deepEqual(mainApp.getPrimes(50), [ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 ]);
       })
