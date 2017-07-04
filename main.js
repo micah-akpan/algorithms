@@ -1,7 +1,7 @@
 function getPrimes(n) {
 	// takes as input, n an int, and returns a list of primes numbers
 	// starting from 0 to n
-	if (n < 0 || typeof n == 'string' || n % 1 !== 0) {
+	if (n < 0 || typeof n == 'string' || n % 1 !== 0 || n == 1 || n == 0) {
 		return 'undefined';
 	} else {
 		let primes = [];
@@ -27,5 +27,6 @@ function isPrime(n) {
 
 	return true;
 }
+
 
 exports.getPrimes = getPrimes;
