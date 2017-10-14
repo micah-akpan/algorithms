@@ -86,6 +86,6 @@ describe("hexToDecimal", function() {
 
 		 it('should return 0 for the decimal equivalent of 0', function() {
 			 assert.equal(HexCalculator.hexToDecimal('0'), 0);
-		 })
+		 });
 	 })
 })
