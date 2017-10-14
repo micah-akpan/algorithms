@@ -82,6 +82,10 @@ describe("hexToDecimal", function() {
 
 		 it('should return 9349058 for the decimal equivalent of 8ea7c2', function() {
 			 assert.equal(HexCalculator.hexToDecimal('8ea7c2'), 9349058);
+		 });
+
+		 it('should return 0 for the decimal equivalent of 0', function() {
+			 assert.equal(HexCalculator.hexToDecimal('0'), 0);
 		 })
 	 })
 })
