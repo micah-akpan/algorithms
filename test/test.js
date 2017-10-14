@@ -1,5 +1,6 @@
 const assert = require('chai').assert;
-const mainApp = require('../main.js')
+const mainApp = require('../main.js');
+const HexCalculator = require('../HexCalculator');
 
 describe("getPrimes", function() {
 
@@ -66,4 +67,21 @@ describe("getPrimes", function() {
    		assert.equal(mainApp.getPrimes(''), 'undefined');
    	})
    })
+})
+
+describe("hexToDecimal", function() {
+
+	 describe("handle valid inputs of n",  function() {
+		 it('should return 90 for the decimal equivalent of 5a', function() {
+			 assert.equal(HexCalculator.hexToDecimal('5a'), 90);
+		 });
+
+		 it('should return 142 for the decimal equivalent of 8e', function() {
+			 assert.equal(HexCalculator.hexToDecimal('8e'), 142);
+		 });
+
+		 it('should return 9349058 for the decimal equivalent of 8ea7c2', function() {
+			 assert.equal(HexCalculator.hexToDecimal('8ea7c2'), 9349058);
+		 })
+	 })
 })
