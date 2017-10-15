@@ -11,9 +11,10 @@ function hexToDecimal(n) {
 
   let result = 0;
   let i = 1;
+  const BASE = 16;
 
   n.toUpperCase().split("").forEach(function(val) {
-    result += mapping[val] * (Math.pow(16, n.length-i));
+    result += hexdec[val] * (Math.pow(BASE, n.length-i));
     i++;
   });
 
