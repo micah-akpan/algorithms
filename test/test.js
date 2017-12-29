@@ -112,6 +112,10 @@ describe('Composite numbers', () => {
       it('should return true when given 10 as input', () => {
         assert.equal(isComposite(10), true);
       });
+
+      it('should return false when given 13 as input', () => {
+        assert.equal(isComposite(13), false);
+      });
     });
 
     describe('handle invalid inputs', () => {
