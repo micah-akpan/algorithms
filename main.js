@@ -28,5 +28,35 @@ function isPrime(n) {
 	return true;
 }
 
+/**
+ * (int) -> bool
+ * returns true or false, if the number is composite or not
+ */
+
+function isComposite(n) {
+
+	// check for non-integer inputs
+	if (typeof n != 'number') {
+		return 'only integer inputs are allowed';
+	}
+
+	// excluding 1, we start with 2
+	let startValue = 2;
+	let count = 0; // increment count each time we get a factor of n
+
+	for (let i = startValue; i < n; i++) {
+		if (n % i == 0) {
+			count++;
+		}
+
+		if (count > 1) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
 
 exports.getPrimes = getPrimes;
+exports.isComposite = isComposite;
