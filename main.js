@@ -63,6 +63,8 @@ function isComposite(n) {
  * returns the equivalent credit card number of the string input 
  */
 function parseCreditCard(str) {
+
+	str = String(str); // just in case, the user enters 'numbers' instead of a string
 	if (str.length != 16) {
 		throw new Error("can only accept credit cards with 16 digits");
 	}

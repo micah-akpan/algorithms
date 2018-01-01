@@ -130,11 +130,11 @@ describe('Composite numbers', () => {
 
 describe('Credit Card numbers fix', () => {
   describe('handle valid inputs', () => {
-    it('should return a well-formatted credit number', () => {
+    it('should return a well-formatted credit card number', () => {
       assert.equal(parseCreditCard('3412565751233768'), '3412-5657-5123-3768');
     });
 
-    it('should return a well-formatted credit number', () => {
+    it('should return a well-formatted credit card number', () => {
       assert.equal(parseCreditCard2('5632124576887876'), '5632-1245-7688-7876');
     });
 
@@ -148,6 +148,10 @@ describe('Credit Card numbers fix', () => {
 
     it('should not throw an exception', () => {
       expect(() => parseCreditCard('7219456734562018')).to.not.throw(Error);
+    });
+
+    it('should return a well-formatted credit-card number', () => {
+      expect(parseCreditCard(1234890312348766)).to.equal('1234-8903-1234-8766');
     })
   });
 });
