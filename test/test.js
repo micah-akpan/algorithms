@@ -1,5 +1,5 @@
-const assert = require('chai').assert;
-const { getPrimes, isComposite } = require('../main.js');
+const { assert, expect } = require('chai');
+const { getPrimes, isComposite, parseCreditCard, parseCreditCard2 } = require('../main.js');
 const HexCalculator = require('../HexCalculator');
 
 describe("getPrimes", function() {
@@ -86,9 +86,10 @@ describe("hexToDecimal", function() {
 
 		 it('should return 0 for the decimal equivalent of 0', function() {
 			 assert.equal(HexCalculator.hexToDecimal('0'), 0);
-		 });
+     });
 	 });
 });
+
 
 
 describe('Composite numbers', () => {
@@ -121,6 +122,32 @@ describe('Composite numbers', () => {
     describe('handle invalid inputs', () => {
       it('should return a descriptive error message when given a string as input', () => {
         assert.equal(isComposite('stupid'), 'only integer inputs are allowed');
-      })
+      });
     })
+});
+
+
+
+describe('Credit Card numbers fix', () => {
+  describe('handle valid inputs', () => {
+    it('should return a well-formatted credit number', () => {
+      assert.equal(parseCreditCard('3412565751233768'), '3412-5657-5123-3768');
+    });
+
+    it('should return a well-formatted credit number', () => {
+      assert.equal(parseCreditCard2('5632124576887876'), '5632-1245-7688-7876');
+    });
+
+    it('should throw an exception', () => {
+      expect(() => parseCreditCard('329129204399713489329341834')).to.throw(Error);
+    });
+
+    it('should throw an exception', () => {
+      expect(() => parseCreditCard('0000')).to.throw(Error);
+    });
+
+    it('should not throw an exception', () => {
+      expect(() => parseCreditCard('7219456734562018')).to.not.throw(Error);
+    })
+  });
 });

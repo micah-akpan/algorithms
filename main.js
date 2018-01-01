@@ -69,7 +69,7 @@ function parseCreditCard(str) {
 
 	let creditCard = '', count = 0;
 	for (let i = 0; i < str.length; i++) {
-		creditCard += str[i];
+		creditCard += str.charAt(i);
 
 		if (creditCard.length == 19) {
 			break;

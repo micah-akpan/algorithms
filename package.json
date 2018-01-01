@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/emrys8/algorithms#readme",
   "dependencies": {
-    "chai": "^4.0.2",
+    "chai": "*",
     "mocha": "^3.4.2"
   }
 }
