@@ -57,6 +57,48 @@ function isComposite(n) {
 	return false;
 }
 
+/**
+ * 
+ * @param {string} str
+ * returns the equivalent credit card number of the string input 
+ */
+function parseCreditCard(str) {
+	if (str.length != 16) {
+		throw new Error("can only accept credit cards with 16 digits");
+	}
+
+	let creditCard = '', count = 0;
+	for (let i = 0; i < str.length; i++) {
+		creditCard += str[i];
+
+		if (creditCard.length == 19) {
+			break;
+		}
+
+		if (count == 3) {
+			creditCard += '-';
+			count = -1;
+		}
+
+		count++;
+	}
+
+	return creditCard;
+}
+
+/**
+ * @param {string} str
+ * parses the string and adds the right dashes to
+ * get a well-formatted credit card number.
+ * This code does the same thing as the one above, but uses regular expression
+ */
+function parseCreditCard2(str) {
+	const dig4Pattern = /[0-9]{4}/g;
+	return str.match(dig4Pattern).join('-');
+}
+
 
 exports.getPrimes = getPrimes;
 exports.isComposite = isComposite;
+exports.parseCreditCard = parseCreditCard;
+exports.parseCreditCard2 = parseCreditCard2;
