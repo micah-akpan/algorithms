@@ -9,11 +9,12 @@ function hexToDecimal(n) {
     '9': 9, 'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15
   };
 
-  let result = 0;
-  let i = 1;
+  let result = 0,
+      i = 1;
+
   const BASE = 16;
 
-  n.toUpperCase().split("").forEach(function(val) {
+  n.toUpperCase().split("").forEach((val) => {
     result += hexdec[val] * (Math.pow(BASE, n.length-i));
     i++;
   });

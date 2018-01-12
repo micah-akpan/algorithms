@@ -1,10 +1,17 @@
+/**
+ * 
+ * @param {int} n 
+ * returns a list of prime numbers starting from 0 to n
+ */
+
 function getPrimes(n) {
-	// takes as input, n an int, and returns a list of primes numbers
-	// starting from 0 to n
-	if (n < 0 || typeof n == 'string' || n % 1 !== 0 || n == 1 || n == 0) {
+
+	let primes = [];
+
+	if (n < 0 || typeof n == 'string' || n % 1 !== 0 || n === 1 || n === 0) {
 		return 'undefined';
 	} else {
-		let primes = [];
+		
 	    for (let i = 2; i < n; i++) {
 	    	if (isPrime(i))
 			    primes.push(i);
@@ -16,11 +23,14 @@ function getPrimes(n) {
 	
 }
 
-
+/**
+ * 
+ * @param {int} n
+ * returns true, if n is a prime number, false otherwise
+ */
 function isPrime(n) {
-	// takes as input, n an int and returns true if n is prime
-	// or false, otherwise
-	for (let i = 2; i < Math.floor(Math.sqrt(n) + 1); i++) {
+	
+	for (let i = 2, flSqr = Math.floor(Math.sqrt(n) + 1); i < flSqr; i++) {
 		if (n % i === 0)
 			return false;
 	}

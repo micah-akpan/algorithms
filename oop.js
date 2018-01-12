@@ -1,4 +1,3 @@
-"use strict";
 
 class MusicalInstrument {
     constructor(name, family, isElectricallyOperated, placeOfOrigin, materials) {
@@ -78,10 +77,3 @@ const electric = new Guitar("Electric Guitar", "string", false, "Italy",
 
 const drums = new Drums("Drums", "percussion", false, "nil", "sticks", ["wood", "aluminium"]);
 const piano = new Piano("Piano", "acoustic string", true, "Italy", ["Hard maple wood"])
-console.log(electric);
-electric.play();
-console.log(drums);
-console.log(drums.getFamily());
-drums.play();
-
-console.log(piano);
