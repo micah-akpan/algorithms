@@ -1,7 +1,9 @@
 /**
+ * @function getPrimes
  * 
- * @param {int} n 
- * returns a list of prime numbers starting from 0 to n
+ * @param {Number} n
+ * @return {[Number]} 
+ * Returns a list of prime numbers starting from 0 to n
  */
 
 function getPrimes(n) {
@@ -24,9 +26,11 @@ function getPrimes(n) {
 }
 
 /**
+ * @function isPrime
  * 
- * @param {int} n
- * returns true, if n is a prime number, false otherwise
+ * @param { Number } n
+ * @return { Boolean }  
+ * Returns true, if n is a prime number, false otherwise
  */
 function isPrime(n) {
 	
@@ -39,14 +43,17 @@ function isPrime(n) {
 }
 
 /**
- * (int) -> bool
- * returns true or false, if the number is composite or not
+ * @function isComposite
+ * 
+ * @param { Number } n
+ * @return { Boolean }
+ * Returns true or false, if the number is composite or not
  */
 
 function isComposite(n) {
 
 	// check for non-integer inputs
-	if (typeof n != 'number') {
+	if ((typeof n != 'number') && (n % 1 != 0)) {
 		return 'only integer inputs are allowed';
 	}
 
@@ -68,9 +75,11 @@ function isComposite(n) {
 }
 
 /**
+ * @function parseCreditCard
  * 
- * @param {string} str
- * returns the equivalent credit card number of the string input 
+ * @param { String } str
+ * @return { String }
+ * Parses the string input and outputs a well-formatted credit card number
  */
 function parseCreditCard(str) {
 
@@ -84,6 +93,7 @@ function parseCreditCard(str) {
 		creditCard += str.charAt(i);
 
 		if (creditCard.length == 19) {
+			// we are at the last digit
 			break;
 		}
 
@@ -99,8 +109,11 @@ function parseCreditCard(str) {
 }
 
 /**
- * @param {string} str
- * parses the string and adds the right dashes to
+ * @function parseCreditCard2
+ * 
+ * @param { String } str
+ * @return { String }
+ * Parses the string and adds the right dashes to
  * get a well-formatted credit card number.
  * This code does the same thing as the one above, but uses regular expression
  */
