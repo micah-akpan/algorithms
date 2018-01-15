@@ -1,2 +1,7 @@
 #this folder/files will be ignored
+
+#node and npm packages/modules
 node_modules/
+
+#test coverage
+coverage/

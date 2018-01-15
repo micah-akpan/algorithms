@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test-cov": "istanbul cover --report text --report html _mocha test/*.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "mocha": "^3.4.2"
   },
   "devDependencies": {
-    "chai": "*"
+    "chai": "*",
+    "istanbul": "^0.4.5"
   }
 }
