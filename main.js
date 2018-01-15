@@ -15,9 +15,10 @@ function getPrimes(n) {
 	} else {
 		
 	    for (let i = 2; i < n; i++) {
-	    	if (isPrime(i))
-			    primes.push(i);
-	}
+	    	if (isPrime(i)) {
+				primes.push(i);
+			}
+		}
 
 	return primes;
 
@@ -35,8 +36,9 @@ function getPrimes(n) {
 function isPrime(n) {
 	
 	for (let i = 2, flSqr = Math.floor(Math.sqrt(n) + 1); i < flSqr; i++) {
-		if (n % i === 0)
+		if (n % i === 0) {
 			return false;
+		}
 	}
 
 	return true;
