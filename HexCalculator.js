@@ -23,4 +23,10 @@ function hexToDecimal(n) {
   return result;
 }
 
+const decToHex = function(dec) {
+  const baseValue = 16;
+  return dec.toString(baseValue);
+}
+
 module.exports.hexToDecimal = hexToDecimal;
+module.exports.decToHex = decToHex;

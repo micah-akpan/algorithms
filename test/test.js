@@ -1,6 +1,6 @@
 const { assert, expect } = require('chai');
 const { getPrimes, isComposite, parseCreditCard, parseCreditCard2 } = require('../main.js');
-const HexCalculator = require('../HexCalculator');
+const { hexToDecimal, decToHex } = require('../HexCalculator');
 
 describe("getPrimes", function() {
 
@@ -73,20 +73,24 @@ describe("hexToDecimal", function() {
 
 	 describe("handle valid inputs of n",  function() {
 		 it('should return 90 for the decimal equivalent of 5a', function() {
-			 assert.equal(HexCalculator.hexToDecimal('5a'), 90);
+			 assert.equal(hexToDecimal('5a'), 90);
 		 });
 
 		 it('should return 142 for the decimal equivalent of 8e', function() {
-			 assert.equal(HexCalculator.hexToDecimal('8e'), 142);
+			 assert.equal(hexToDecimal('8e'), 142);
 		 });
 
 		 it('should return 9349058 for the decimal equivalent of 8ea7c2', function() {
-			 assert.equal(HexCalculator.hexToDecimal('8ea7c2'), 9349058);
+			 assert.equal(hexToDecimal('8ea7c2'), 9349058);
 		 });
 
 		 it('should return 0 for the decimal equivalent of 0', function() {
-			 assert.equal(HexCalculator.hexToDecimal('0'), 0);
+			 assert.equal(hexToDecimal('0'), 0);
      });
+
+     it('should return a for the hexadecimal equivalent of 10', function() {
+       assert.equal(decToHex(10), 'a');
+     })
 	 });
 });
 
@@ -152,6 +156,6 @@ describe('Credit Card numbers fix', () => {
 
     it('should return a well-formatted credit-card number', () => {
       expect(parseCreditCard(1234890312348766)).to.equal('1234-8903-1234-8766');
-    })
+    });
   });
 });
