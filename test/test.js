@@ -69,10 +69,10 @@ describe("getPrimes", () => {
    });
 })
 
-describe("hexToDecimal", function() {
+describe("hexToDecimal", () => {
 
-	 describe("handle valid inputs of n",  function() {
-		 it('should return 90 for the decimal equivalent of 5a', function() {
+	 describe("handle valid inputs of n",  () => {
+		 it('should return 90 for the decimal equivalent of 5a', () => {
 			 assert.equal(hexToDecimal('5a'), 90);
 		 });
 
