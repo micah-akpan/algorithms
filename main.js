@@ -6,11 +6,11 @@
  * Returns a list of prime numbers starting from 0 to n
  */
 
-function getPrimes(n) {
+const getPrimes = (n) => {
 
 	let primes = [];
 
-	if (n < 0 || typeof n == 'string' || n % 1 !== 0 || n === 1 || n === 0) {
+	if (n < 0 || typeof n === 'string' || n % 1 !== 0 || n === 1 || n === 0) {
 		return 'undefined';
 	} else {
 		
@@ -22,8 +22,7 @@ function getPrimes(n) {
 
 	return primes;
 
-}	
-	
+	}	
 }
 
 /**
@@ -52,7 +51,7 @@ function isPrime(n) {
  * Returns true or false, if the number is composite or not
  */
 
-function isComposite(n) {
+const isComposite = (n) => {
 
 	// check for non-integer inputs
 	if ((typeof n != 'number') && (n % 1 != 0)) {
@@ -64,7 +63,7 @@ function isComposite(n) {
 	let count = 0; // increment count each time we get a factor of n
 
 	for (let i = startValue; i < n; i++) {
-		if (n % i == 0) {
+		if (n % i === 0) {
 			count++;
 		}
 
@@ -83,10 +82,10 @@ function isComposite(n) {
  * @return { String }
  * Parses the string input and outputs a well-formatted credit card number
  */
-function parseCreditCard(str) {
+const parseCreditCard = (str) => {
 
 	str = String(str); // just in case, the user enters 'numbers' instead of a string
-	if (str.length != 16) {
+	if (str.length !== 16) {
 		throw new Error("can only accept credit cards with 16 digits");
 	}
 
@@ -119,7 +118,7 @@ function parseCreditCard(str) {
  * get a well-formatted credit card number.
  * This code does the same thing as the one above, but uses regular expression
  */
-function parseCreditCard2(str) {
+const parseCreditCard2 = (str) => {
 	const dig4Pattern = /[0-9]{4}/g;
 	return str.match(dig4Pattern).join('-');
 }

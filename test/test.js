@@ -2,36 +2,36 @@ const { assert, expect } = require('chai');
 const { getPrimes, isComposite, parseCreditCard, parseCreditCard2 } = require('../main.js');
 const { hexToDecimal, decToHex } = require('../HexCalculator');
 
-describe("getPrimes", function() {
+describe("getPrimes", () => {
 
-	describe("handle valid input of n", function () {
-	it("should return prime numbers from 0 to n", function() {
-		assert.deepEqual(getPrimes(10), [2, 3, 5, 7]);
+	describe("handle valid input of n",  () => {
+	  it("should return prime numbers from 0 to n", () => {
+		  assert.deepEqual(getPrimes(10), [2, 3, 5, 7]);
 	});
  });
 
-   describe("handle valid input of n", function() {
-      it ("should return prime numbers from 0 to n", function() {
+   describe("handle valid input of n", () => {
+      it ("should return prime numbers from 0 to n", () => {
          assert.deepEqual(getPrimes(20), [2, 3, 5, 7, 11, 13, 17, 19]);
       });
    });
 
 
-   describe("handle valid input of n", function() {
-      it ("should return prime numbers from 0 to n", function() {
+   describe("handle valid input of n", () => {
+      it ("should return prime numbers from 0 to n", () => {
          assert.deepEqual(getPrimes(40), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37])
       });
    });
 
 
-   describe("handle valid input of n", function() {
-      it ("should return prime numbers from 0 to n", function () {
+   describe("handle valid input of n", () => {
+      it ("should return prime numbers from 0 to n", () => {
          assert.deepEqual(getPrimes(50), [ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 ]);
       });
    });
 
-   describe("handle negative values", function() {
-   	 it ("should return undefined when given a negative value for n", function() {
+   describe("handle negative values", () => {
+   	 it ("should return undefined when given a negative value for n", () => {
    	 	assert.equal(getPrimes(-4), 'undefined');
    	 });
    });
