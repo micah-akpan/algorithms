@@ -124,6 +124,16 @@ const parseCreditCard2 = (str) => {
 }
 
 /**
+ * 
+ * @param { Object } obj 
+ * @return { Boolean }
+ */
+const isEmpty = (obj) => {
+	const hasNoProps = Object.keys(obj).length === 0 ? true : false;
+	return hasNoProps;
+}
+
+/**
  * @param {*} optional object
  * @param {*} 
  * @param {*}
@@ -133,8 +143,8 @@ const parseCreditCard2 = (str) => {
 const extendObj = function() {
 	const emptyObj = arguments[0]; // the object to be extended
 
-	if ((Object.prototype.toString.call(emptyObj) === ['object Object']) 
-		&& (Object.keys(emptyObj).length === 0)) {
+	if ((Object.prototype.toString.call(emptyObj) === ['object Object'])
+		&& (isEmpty(emptyObj))) {
 		
 		// add all props from other arguments values to newObj
 		for (var prop in arguments[1]) {
@@ -155,6 +165,7 @@ const extendObj = function() {
 	}
 	return arguments[1];
 }
+
 
 exports.getPrimes = getPrimes;
 exports.isComposite = isComposite;
