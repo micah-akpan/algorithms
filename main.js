@@ -123,8 +123,41 @@ const parseCreditCard2 = (str) => {
 	return str.match(dig4Pattern).join('-');
 }
 
+/**
+ * @param {*} optional object
+ * @param {*} 
+ * @param {*}
+ * @return {*}
+ * Returns an extended object with props from each object passed in as params
+ */
+const extendObj = function() {
+	const emptyObj = arguments[0]; // the object to be extended
+
+	if ((Object.prototype.toString.call(emptyObj) === ['object Object']) 
+		&& (Object.keys(emptyObj).length === 0)) {
+		
+		// add all props from other arguments values to newObj
+		for (var prop in arguments[1]) {
+			emptyObj[prop] = arguments[1][prop];
+		}
+
+		for (var prop in arguments[2]) {
+			emptyObj[prop] = arguments[2][prop];
+		}
+
+		return emptyObj;
+	}
+
+	// extend the first object with props and values
+	// from the second object
+	for (var prop in arguments[2]) {
+		arguments[1][prop] = arguments[2][prop];
+	}
+	return arguments[1];
+}
 
 exports.getPrimes = getPrimes;
 exports.isComposite = isComposite;
 exports.parseCreditCard = parseCreditCard;
 exports.parseCreditCard2 = parseCreditCard2;
+exports.extendObj = extendObj;

@@ -1,5 +1,6 @@
 const { assert, expect } = require('chai');
-const { getPrimes, isComposite, parseCreditCard, parseCreditCard2 } = require('../main.js');
+const { getPrimes, isComposite, parseCreditCard, parseCreditCard2 } = require('../main');
+const { extendObj } = require('../main');
 const { hexToDecimal, decToHex } = require('../HexCalculator');
 
 describe("getPrimes", () => {
@@ -127,8 +128,25 @@ describe('Composite numbers', () => {
       it('should return a descriptive error message when given a string as input', () => {
         assert.equal(isComposite('stupid'), 'only integer inputs are allowed');
       });
-    })
+    });
 });
+
+describe('Extend Objects feature', () => {
+   describe('handle valid object input', () => {
+     it('should return an extended first object', () => {
+       assert.deepEqual(extendObj({ name: 'Sam' }, { name: 'Rebecca' }), { name: 'Rebecca' });
+     });
+
+     it ('should return an extended object with a first object', () => {
+       assert.deepEqual(extendObj({ name: 'Koffi' }, 
+                        { name: 'Koffi', profession: 'Wrestling' }), { name: 'Koffi', profession: 'Wrestling' });
+     });
+
+     it('should return an extended object with first empty object input', () => {
+       assert.deepEqual(extendObj({}, { name: 'Ekanem' }, { age: 94}), { name: 'Ekanem', age: 94 });
+     })
+   })
+})
 
 
 
