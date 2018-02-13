@@ -148,11 +148,16 @@ const extendObj = function() {
 		
 		// add all props from other arguments values to newObj
 		for (var prop in arguments[1]) {
-			emptyObj[prop] = arguments[1][prop];
+			if (arguments[1].hasOwnProperty(prop)) {
+				emptyObj[prop] = arguments[1][prop];
+			}
+			
 		}
 
 		for (var prop in arguments[2]) {
-			emptyObj[prop] = arguments[2][prop];
+			if (arguments[2].hasOwnProperty(prop)) {
+				emptyObj[prop] = arguments[2][prop];
+			}
 		}
 
 		return emptyObj;
