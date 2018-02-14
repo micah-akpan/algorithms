@@ -195,8 +195,26 @@ Object.prototype.equals = function (another) {
 	return true;
 }
 
+const Component = function(id) {
+
+	Component.idStore = Component.idStore || [];
+	for (let i = 0, len = Component.idStore.length; i < len; i++) {
+		if (Component.idStore[i] === id) {
+			throw {
+				name: 'UniqueIndexError',
+				message: 'It seems you have an object with the given id'
+			}
+		}
+	}
+
+	this.id = id;
+	Component.idStore.push(id);
+}
+
+
 exports.getPrimes = getPrimes;
 exports.isComposite = isComposite;
 exports.parseCreditCard = parseCreditCard;
 exports.parseCreditCard2 = parseCreditCard2;
 exports.extendObj = extendObj;
+exports.Component = Component;
