@@ -151,9 +151,19 @@ describe('Extend Objects feature', () => {
 
 describe('object contents equality', () => {
   describe('test for equality', () => {
-    it('should return true if both objects contain same members', () => {
+    it('should return true if both objects contain same members (similar)', () => {
       const myObj = { id : 1, place: 'school' };
       assert.equal(myObj.equals({ id: 1, place: 'school' }), true);
+    });
+
+    it('should return false if both objects contain dissimilar members', () => {
+      const myObj = { id: 1, place: 'school' };
+      assert.equal(myObj.equals({ id: 2, place: 'school' }), false);
+    });
+
+    it('should return false if both objects contain dissimilar members', () => {
+      const myObj = { id: 1, place: 'school'};
+      assert.equal(myObj.equals({ atomic: true, atomic_number: 8, id: 3 }), false);
     })
   })
 })

@@ -178,7 +178,7 @@ const extendObj = function() {
  * @param {Object} object1 
  * @return {Boolean}
  * 
- * It's not right to augment built-in constructor function
+ * It's not a right idea to augment built-in functions
  * Things can get very messy when you do!
  * But we need this here - just for illustration
  * 
