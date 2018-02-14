@@ -203,7 +203,7 @@ Object.prototype.equals = function (another) {
  * 
  * @param {Number} id
  * Creates a Component instance and assigns unique id to each instance
- * No private variables are used (intentional)
+ * No private instance variables are used (intentional)
  */
 const Component = function(id) {
 
