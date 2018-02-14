@@ -141,22 +141,24 @@ const isEmpty = (obj) => {
  * Returns an extended object with props from each object passed in as params
  */
 const extendObj = function() {
-	const emptyObj = arguments[0]; // the object to be extended
+	const emptyObj = arguments[0], // the object to be extended
+		  first = arguments[1], // first non-empty object
+		  second = arguments[2]; // second non-empty object
 
 	if ((Object.prototype.toString.call(emptyObj) === ['object Object'])
-		&& (isEmpty(emptyObj))) {
+		&& (isEmpty(emptyObj))) { // first argument must be an object and be empty
 		
 		// add all props from other arguments values to newObj
-		for (var prop in arguments[1]) {
-			if (arguments[1].hasOwnProperty(prop)) {
-				emptyObj[prop] = arguments[1][prop];
+		for (var prop in first) {
+			if (first.hasOwnProperty(prop)) {
+				emptyObj[prop] = first[prop];
 			}
 			
 		}
 
-		for (var prop in arguments[2]) {
-			if (arguments[2].hasOwnProperty(prop)) {
-				emptyObj[prop] = arguments[2][prop];
+		for (var prop in second) {
+			if (second.hasOwnProperty(prop)) {
+				emptyObj[prop] = second[prop];
 			}
 		}
 
@@ -170,6 +172,7 @@ const extendObj = function() {
 	}
 	return arguments[1];
 }
+
 
 
 exports.getPrimes = getPrimes;
