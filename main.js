@@ -173,7 +173,27 @@ const extendObj = function() {
 	return arguments[1];
 }
 
+/**
+ * 
+ * @param {Object} object1 
+ * @return {Boolean}
+ * 
+ * It's not right to augment built-in constructor function
+ * Things can get very messy when you do!
+ * But we need this here - just for illustration
+ * 
+ * This is an implementation of the Object.equals() method
+ */
+Object.prototype.equals = function (another) {
+	for (let name in this) {
 
+		if ((!name in another) || (this[name] != another[name])) {
+			return false;
+		}
+	}
+
+	return true;
+}
 
 exports.getPrimes = getPrimes;
 exports.isComposite = isComposite;

@@ -144,8 +144,18 @@ describe('Extend Objects feature', () => {
 
      it('should return an extended object with first empty object input', () => {
        assert.deepEqual(extendObj({}, { name: 'Ekanem' }, { age: 94}), { name: 'Ekanem', age: 94 });
-     })
+     });
    })
+});
+
+
+describe('object contents equality', () => {
+  describe('test for equality', () => {
+    it('should return true if both objects contain same members', () => {
+      const myObj = { id : 1, place: 'school' };
+      assert.equal(myObj.equals({ id: 1, place: 'school' }), true);
+    })
+  })
 })
 
 
