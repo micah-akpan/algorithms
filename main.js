@@ -124,6 +124,7 @@ const parseCreditCard2 = (str) => {
 }
 
 /**
+ * @function isEmpty
  * 
  * @param { Object } obj 
  * @return { Boolean }
@@ -134,6 +135,7 @@ const isEmpty = (obj) => {
 }
 
 /**
+ * @function extendObj
  * @param {*} optional object
  * @param {*} 
  * @param {*}
@@ -174,6 +176,7 @@ const extendObj = function() {
 }
 
 /**
+ * @method equals
  * 
  * @param {Object} object1 
  * @return {Boolean}
@@ -195,7 +198,13 @@ Object.prototype.equals = function (another) {
 	return true;
 }
 
-
+/**
+ * @constructor Component
+ * 
+ * @param {Number} id
+ * Creates a Component instance and assigns unique id to each instance
+ * No private variables are used (intentional)
+ */
 const Component = function(id) {
 
 	Component.idStore = Component.idStore || [];
