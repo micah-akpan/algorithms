@@ -195,6 +195,7 @@ Object.prototype.equals = function (another) {
 	return true;
 }
 
+
 const Component = function(id) {
 
 	Component.idStore = Component.idStore || [];
