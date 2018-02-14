@@ -9,5 +9,14 @@ describe('Component', () => {
             const comp1 = new Component(1);
             expect(Component.idStore.length).to.equal(1);
         });
+
+        it('should return 3', () => {
+            const comp3 = new Component(3);
+            expect(Component.idStore[1]).to.equal(3);
+        });
+
+        it('should throw an exception', () => {
+            expect(() => new Component(1)).to.throw();
+        });
     });
 });
