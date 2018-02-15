@@ -1,6 +1,6 @@
 const { assert, expect } = require('chai');
 const { getPrimes, isComposite, parseCreditCard, parseCreditCard2 } = require('../main');
-const { extendObj } = require('../main');
+const { extendObj, equals } = require('../main');
 const { hexToDecimal, decToHex } = require('../HexCalculator');
 
 describe("getPrimes", () => {
