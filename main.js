@@ -26,7 +26,7 @@ const getPrimes = (n) => {
   if (n < 0 || typeof n === 'string' || n % 1 !== 0 || n === 1 || n === 0) {
     return 'undefined';
   }
-  for (let i = 2; i < n; i += 2) {
+  for (let i = 2; i < n; i += 1) {
     if (isPrime(i)) {
       primes.push(i);
     }
@@ -130,31 +130,36 @@ const isEmpty = (obj) => {
  * Returns an extended object with props from each object passed in as params
  */
 const extendObj = (...args) => {
-  const emptyObj = args[0]; // the object to be extended
-  const first = args[1]; // first non-empty object
-  const second = args[2]; // second non-empty object
+  let [emptyObj, first, second] = args;
 
-  if ((Object.prototype.toString.call(emptyObj) === ['object Object'])
-    && (isEmpty(emptyObj))) { // first argument must be an object and be empty
-    // add all props from other arguments values to newObj
-    const firstObjkeys = Object.keys(first);
-    for (let i = 0; i < firstObjkeys.length; i += 1) {
-      emptyObj[firstObjkeys[i]] = first[firstObjkeys[i]];
+  if ((emptyObj instanceof Object) && (isEmpty(emptyObj))) {
+  // first argument must be an object and be empty
+    if (first) {
+      const firstObjkeys = Object.keys(first);
+      for (let i = 0; i < firstObjkeys.length; i += 1) {
+        emptyObj[firstObjkeys[i]] = first[firstObjkeys[i]];
+      }
     }
-    const secondObjkeys = Object.keys(second);
-    for (let i = 0; i < secondObjkeys.length; i += 1) {
-      emptyObj[secondObjkeys[i]] = second[secondObjkeys[i]];
+
+    if (second) {
+      const secondObjkeys = Object.keys(second);
+      let key;
+      for (let i = 0; i < secondObjkeys.length; i += 1) {
+        key = secondObjkeys[i];
+        emptyObj[key] = second[key];
+      }
     }
     return emptyObj;
   }
 
-  // extend the first object with props and values
-  // from the second object
-  const secondObjkeys = Object.keys(second);
-  let key;
-  for (let i = 0; i < secondObjkeys.length; i += 1) {
-    key = secondObjkeys[i];
-    first[key] = second[key];
+  if ((!second) && (args.length === 2)) {
+    [first, second] = args;
+    const secondObjkeys = Object.keys(second);
+    let key;
+    for (let i = 0; i < secondObjkeys.length; i += 1) {
+      key = secondObjkeys[i];
+      first[key] = second[key];
+    }
   }
   return first;
 };
