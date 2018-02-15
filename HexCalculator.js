@@ -30,7 +30,8 @@ const hexToDecimal = (n) => {
 
   n.toUpperCase().split('').forEach((val, idx) => {
     // idx becomes idx + 1, starting at 1 instead of 0,
-    result += hexdec[val] * (BASE ** (nItems - (idx + 1)));
+    // result += hexdec[val] * (BASE ** (nItems - (idx + 1)));
+    result += hexdec[val] * (Math.pow(BASE, (nItems - (idx + 1))));
   });
 
   return result;
