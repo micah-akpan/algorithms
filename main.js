@@ -194,10 +194,13 @@ const equals = (obj1, obj2) => {
  */
 function Component(id) {
   Component.idStore = Component.idStore || [];
-  for (let i = 0, len = Component.idStore.length; i < len; i += 1) {
-    if (Component.idStore[i] === id) {
-      throw new Error('It seems you have an object with the given id');
-    }
+  // for (let i = 0, len = Component.idStore.length; i < len; i += 1) {
+  //   if (Component.idStore[i] === id) {
+  //     throw new Error('It seems you have an object with the given id');
+  //   }
+  // }
+  if (Component.idStore.includes(id)) {
+    throw new Error('UniqueIndexError');
   }
   this.id = id;
   Component.idStore.push(id);
