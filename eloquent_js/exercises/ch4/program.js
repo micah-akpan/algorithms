@@ -1,8 +1,18 @@
-exports.range = (start, end) => {
+exports.range = (start, end, step) => {
   const nums = [];
-  for (let i = start; i <= end; i += 1) {
-    nums.push(i);
+  step = step || 1;
+
+  if (step < 0) { // negative step
+    step *= step; // convert step  to a positive form
+    for (let i = start; i >= end; i -= step) {
+      nums.push(i);
+    }
+  } else {
+    for (let i = start; i <= end; i += step) {
+      nums.push(i);
+    }
   }
+  return nums;
 };
 
 
@@ -14,3 +24,5 @@ exports.sum = (array) => {
 
   return result;
 };
+
+
