@@ -43,7 +43,38 @@ exports.reverseArrayInPlace = (array) => {
   return array;
 };
 
+exports.arrayToList = (array) => {
+  let arrayList = null;
+  for (let i = array.length -1; i >= 0; i -= 1) {
+    arrayList = { result: array[i], rest: arrayList };
+  }
+  return arrayList;
+};
 
+exports.listToArray = (list) => {
+  const array = [];
+  for (let node = list; node !== null; node = node.rest) {
+    array.push(node.result);
+  }
+
+  return array;
+};
+
+exports.prepend = (val, list) => {
+  return { value: val, rest: list };
+};
+
+exports.nth = function nth(n, list) {
+  if (list === null) {
+    return undefined;
+  }
+
+  if (n === 0) {
+    return list.value;
+  }
+
+  return nth(n - 1, list.rest);
+};
 // NOTES
 // reverseArray is a pure function, it adds no side effects
 // instead it creates a new array and returns it.

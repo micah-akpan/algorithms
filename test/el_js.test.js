@@ -1,6 +1,7 @@
 const { expect, assert } = require('chai');
 const { isEven, countBs, countBs1 } = require('../eloquent_js/exercises/ch3/program');
 const { range, sum, reverseArray, reverseArrayInPlace } = require('../eloquent_js/exercises/ch4/program');
+const { arrayToList, listToArray, prepend, nth } = require('../eloquent_js/exercises/ch4/program');
 
 describe('Chapter 3 Exercises Test', () => {
   describe('Test for Even numbers', () => {
@@ -62,6 +63,76 @@ describe('Chapter 4 Exercises Test', () => {
       it('should return [9, 7, 5, 3, 1] for inputs [1, 3, 5, 7, 9]', () => {
         assert.deepEqual(reverseArrayInPlace([1, 3, 5, 7, 9]), [9, 7, 5, 3, 1]);
       });
+    });
+  });
+
+  describe('ArrayToList', () => {
+    describe('handle valid array input', () => {
+      it('should return a list', () => {
+        assert.deepEqual(arrayToList([1, 2, 3]), {
+          result: 1,
+          rest: {
+            result: 2,
+            rest: {
+              result: 3,
+              rest: null
+            }
+          }
+        });
+      });
+    });
+  });
+
+  describe('ListToArray', () => {
+    describe('handle valid array input', () => {
+      it('should return an array', () => {
+        assert.deepEqual(listToArray({
+          result: 1,
+          rest: {
+            result: 2,
+            rest: {
+              result: 3,
+              rest: null
+            }
+          }
+        }), [1, 2, 3]);
+      });
+    });
+  });
+
+  describe('prepend', () => {
+    describe('handle valid inputs', () => {
+      assert.deepEqual(prepend(1, {
+        value: 2,
+        rest: {
+          value: 3,
+          rest: null
+        }
+      }), {
+        value: 1,
+        rest: {
+          value: 2,
+          rest: {
+            value: 3,
+            rest: null
+          }
+        }
+      });
+    });
+  });
+
+  describe('nth', () => {
+    it('should return the nth element in the list', () => {
+      expect(nth(2, {
+        value: 20,
+        rest: {
+          value: 30,
+          rest: {
+            value: 45,
+            rest: null
+          }
+        }
+      })).to.equal(45);
     });
   });
 });
