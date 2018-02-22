@@ -1,6 +1,6 @@
 const { expect, assert } = require('chai');
 const { isEven, countBs, countBs1 } = require('../eloquent_js/exercises/ch3/program');
-const { range, sum, reverseArray } = require('../eloquent_js/exercises/ch4/program');
+const { range, sum, reverseArray, reverseArrayInPlace } = require('../eloquent_js/exercises/ch4/program');
 
 describe('Chapter 3 Exercises Test', () => {
   describe('Test for Even numbers', () => {
@@ -53,6 +53,14 @@ describe('Chapter 4 Exercises Test', () => {
     describe('handle valid array input', () => {
       it('should return [9, 7, 5, 3, 1] for inputs [1, 3, 5, 7, 9]', () => {
         assert.deepEqual(reverseArray([1, 3, 5, 7, 9]), [9, 7, 5, 3, 1]);
+      });
+    });
+  });
+
+  describe('ReverseArray (In Place)', () => {
+    describe('handle valid array input', () => {
+      it('should return [9, 7, 5, 3, 1] for inputs [1, 3, 5, 7, 9]', () => {
+        assert.deepEqual(reverseArrayInPlace([1, 3, 5, 7, 9]), [9, 7, 5, 3, 1]);
       });
     });
   });

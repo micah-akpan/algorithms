@@ -31,4 +31,26 @@ exports.reverseArray = (array) => {
     output.push(array[i]);
   }
   return output;
-}
+};
+
+exports.reverseArrayInPlace = (array) => {
+  for (let i = 0; i < Math.floor(array.length / 2); i += 1) {
+    const old = array[i];
+    array[i] = array[array.length - 1 - i];
+    array[array.length - 1 - i] = old;
+  }
+
+  return array;
+};
+
+
+// NOTES
+// reverseArray is a pure function, it adds no side effects
+// instead it creates a new array and returns it.
+
+// reverseArrayInPlace, on the other hand is
+// not a pure function, it mutates the original array,
+// this has a side effect
+
+// ON Efficiency:
+// reverseArrayInPlace is more efficient
