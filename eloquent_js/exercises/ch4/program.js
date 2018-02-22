@@ -25,4 +25,10 @@ exports.sum = (array) => {
   return result;
 };
 
-
+exports.reverseArray = (array) => {
+  const output = [];
+  for (let i = array.length - 1; i >= 0; i -= 1) {
+    output.push(array[i]);
+  }
+  return output;
+}
