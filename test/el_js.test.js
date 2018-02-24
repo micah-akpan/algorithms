@@ -3,7 +3,7 @@ const { isEven, countBs, countBs1 } = require('../eloquent_js/exercises/ch3/prog
 const { range, sum, reverseArray, reverseArrayInPlace } = require('../eloquent_js/exercises/ch4/program');
 const { arrayToList, listToArray, prepend, nth } = require('../eloquent_js/exercises/ch4/program');
 
-const { flatten } = require('../eloquent_js/exercises/ch5/program');
+const { flatten, some, someV2, every, everyV2 } = require('../eloquent_js/exercises/ch5/program');
 
 describe('Chapter 3 Exercises Test', () => {
   describe('Test for Even numbers', () => {
@@ -150,6 +150,54 @@ describe('Chapter 5 Test', () => {
     describe('handle valid array input', () => {
       it('should return a flattened array from a multi-dimensional array input', () => {
         assert.deepEqual(flatten([[1, 3], [4, 6]]), [1, 3, 4, 6]);
+      });
+    });
+  });
+
+  describe('Some test', () => {
+    describe('handle valid array input', () => {
+      it('should return true if any element in the array is odd', () => {
+        expect(some([6, 8, 7], num => num % 2 !== 0)).to.equal(true);
+      });
+
+      it('should return false', () => {
+        expect(some([3, 5, 1], num => num % 2 === 0)).to.equal(false);
+      });
+    });
+  });
+
+  describe('Some v2 test', () => {
+    describe('handle valid array input', () => {
+      it('should return true', () => {
+        expect(someV2([6, 8, 7], num => num % 2 !== 0)).to.equal(true);
+      });
+
+      it('should return false', () => {
+        expect(someV2([3, 5, 1], num => num % 2 === 0)).to.equal(false);
+      });
+    });
+  });
+
+  describe('Every test', () => {
+    describe('handle valid array input', () => {
+      it('should return false', () => {
+        expect(every([6, 8, 7], num => num % 2 === 0)).to.equal(false);
+      });
+
+      it('should return true', () => {
+        expect(everyV2([3, 5, 1], num => num % 2 !== 0)).to.equal(true);
+      });
+    });
+  });
+
+  describe('Every v2 Test', () => {
+    describe('handle valid array input', () => {
+      it('should return true', () => {
+        expect(everyV2([3, 5, 1], num => num % 2 !== 0)).to.equal(true);
+      });
+
+      it('should return false', () => {
+        expect(everyV2([6, 8, 7], num => num % 2 === 0)).to.equal(false);
       });
     });
   });
