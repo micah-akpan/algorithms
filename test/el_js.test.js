@@ -177,4 +177,16 @@ describe('Chapter 5 Test', () => {
       });
     });
   });
+
+  describe('Every test', () => {
+    describe('handle valid array input', () => {
+      it('should return false', () => {
+        expect(every([6, 8, 7], num => num % 2 === 0)).to.equal(false);
+      });
+
+      it('should return true', () => {
+        expect(every([3, 5, 1], num => num % 2 !== 0)).to.equal(true);
+      })
+    });
+  });
 });
