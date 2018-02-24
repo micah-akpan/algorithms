@@ -3,7 +3,7 @@ const { isEven, countBs, countBs1 } = require('../eloquent_js/exercises/ch3/prog
 const { range, sum, reverseArray, reverseArrayInPlace } = require('../eloquent_js/exercises/ch4/program');
 const { arrayToList, listToArray, prepend, nth } = require('../eloquent_js/exercises/ch4/program');
 
-const { flatten, some, someV2, every } = require('../eloquent_js/exercises/ch5/program');
+const { flatten, some, someV2, every, everyV2 } = require('../eloquent_js/exercises/ch5/program');
 
 describe('Chapter 3 Exercises Test', () => {
   describe('Test for Even numbers', () => {
@@ -185,8 +185,20 @@ describe('Chapter 5 Test', () => {
       });
 
       it('should return true', () => {
-        expect(every([3, 5, 1], num => num % 2 !== 0)).to.equal(true);
-      })
+        expect(everyV2([3, 5, 1], num => num % 2 !== 0)).to.equal(true);
+      });
+    });
+  });
+
+  describe('Every v2 Test', () => {
+    describe('handle valid array input', () => {
+      it('should return true', () => {
+        expect(everyV2([3, 5, 1], num => num % 2 !== 0)).to.equal(true);
+      });
+
+      it('should return false', () => {
+        expect(everyV2([6, 8, 7], num => num % 2 === 0)).to.equal(false);
+      });
     });
   });
 });

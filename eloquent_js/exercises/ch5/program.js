@@ -15,6 +15,11 @@ exports.someV2 = (arr, test) => {
 };
 
 exports.every = (array, test) => {
+  const anyFalse = array.map(test).filter(val => val === false);
+  return !(anyFalse.length > 0);
+};
+
+exports.everyV2 = (array, test) => {
   for (let i = 0; i < array.length; i += 1) {
     if (!test(array[i])) {
       return false;
