@@ -1,9 +1,14 @@
 const { expect, assert } = require('chai');
 const { isEven, countBs, countBs1 } = require('../eloquent_js/exercises/ch3/program');
-const { range, sum, reverseArray, reverseArrayInPlace } = require('../eloquent_js/exercises/ch4/program');
-const { arrayToList, listToArray, prepend, nth } = require('../eloquent_js/exercises/ch4/program');
+const {
+  range, sum, reverseArray, reverseArrayInPlace } = require('../eloquent_js/exercises/ch4/program');
+const {
+  arrayToList, listToArray, prepend, nth
+} = require('../eloquent_js/exercises/ch4/program');
 
-const { flatten, some, someV2, every, everyV2 } = require('../eloquent_js/exercises/ch5/program');
+const {
+  flatten, some, someV2, every, everyV2, differencesInAge, average
+} = require('../eloquent_js/exercises/ch5/program');
 
 describe('Chapter 3 Exercises Test', () => {
   describe('Test for Even numbers', () => {
@@ -199,6 +204,13 @@ describe('Chapter 5 Test', () => {
       it('should return false', () => {
         expect(everyV2([6, 8, 7], num => num % 2 === 0)).to.equal(false);
       });
+    });
+  });
+
+  describe('mother-child differences', () => {
+    it('should return 31.2 as the difference in the average ages', () => {
+      const averageAges = Number(average(differencesInAge).toFixed(1));
+      expect(averageAges).to.equal(31.2);
     });
   });
 });
