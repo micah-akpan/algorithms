@@ -6,3 +6,4 @@ node_modules/
 #test coverage
 coverage/
 .coveralls.yml
+.nyc_output
