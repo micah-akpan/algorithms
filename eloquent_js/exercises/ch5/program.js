@@ -5,11 +5,20 @@ exports.some = (array, test) => {
   return anyTrue.length > 0;
 };
 
-exports.someV2 = (array, test) => {
-  array.forEach((value) => {
-    if (test(value)) {
+exports.someV2 = (arr, test) => {
+  for (let i = 0; i < arr.length; i += 1) {
+    if (test(arr[i])) {
       return true;
     }
-  });
+  }
   return false;
+};
+
+exports.every = (array, test) => {
+  for (let i = 0; i < array.length; i += 1) {
+    if (!test(array[i])) {
+      return false;
+    }
+  }
+  return true;
 };
