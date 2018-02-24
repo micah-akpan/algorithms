@@ -3,6 +3,8 @@ const { isEven, countBs, countBs1 } = require('../eloquent_js/exercises/ch3/prog
 const { range, sum, reverseArray, reverseArrayInPlace } = require('../eloquent_js/exercises/ch4/program');
 const { arrayToList, listToArray, prepend, nth } = require('../eloquent_js/exercises/ch4/program');
 
+const { flatten } = require('../eloquent_js/exercises/ch5/program');
+
 describe('Chapter 3 Exercises Test', () => {
   describe('Test for Even numbers', () => {
     describe('handle valid input', () => {
@@ -133,6 +135,22 @@ describe('Chapter 4 Exercises Test', () => {
           }
         }
       })).to.equal(45);
+    });
+  });
+
+  describe('nth', () => {
+    it('should return undefined if given a null list', () => {
+      expect(nth(1, null)).to.equal(undefined);
+    })
+  })
+});
+
+describe('Chapter 5 Test', () => {
+  describe('Flatten an array test', () => {
+    describe('handle valid array input', () => {
+      it('should return a flattened array from a multi-dimensional array input', () => {
+        assert.deepEqual(flatten([[1, 3], [4, 6]]), [1, 3, 4, 6]);
+      });
     });
   });
 });
