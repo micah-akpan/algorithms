@@ -10,6 +10,8 @@ const {
   flatten, some, someV2, every, everyV2, differencesInAge, average
 } = require('../eloquent_js/exercises/ch5/program');
 
+const { Vector } = require('../eloquent_js/exercises/ch6/vector');
+
 describe('Chapter 3 Exercises Test', () => {
   describe('Test for Even numbers', () => {
     describe('handle valid input', () => {
@@ -211,6 +213,43 @@ describe('Chapter 5 Test', () => {
     it('should return 31.2 as the difference in the average ages', () => {
       const averageAges = Number(average(differencesInAge).toFixed(1));
       expect(averageAges).to.equal(31.2);
+    });
+  });
+});
+
+
+describe('Chapter 6', () => {
+  describe('Inheritance - Vector', () => {
+    it('should return 5 as the distance between the two vectors', () => {
+      const vec = new Vector(3, 4);
+      expect(vec.length).to.equal(5);
+    });
+
+    it('should return a new vector', () => {
+      const vec = new Vector(4, 7);
+      expect(vec instanceof Vector).to.equal(true);
+    });
+
+    it('should return a new integral vector property', () => {
+      const vec1 = new Vector(3, 4);
+      const vec2 = vec1.plus(new Vector(4, 7));
+      expect(vec2.x).to.equal(7);
+    });
+
+    it('should return a new differential vector property', () => {
+      const vec1 = new Vector(3, 4);
+      const vec2 = vec1.minus(new Vector(4, 7));
+      expect(vec2.x).to.equal(-1);
+    });
+
+    it('should return a new differential vector property', () => {
+      const vec1 = new Vector(3, 4);
+      const vec2 = vec1.minus(new Vector(4, 7));
+      expect(vec2.y).to.equal(-3);
+    });
+
+    it('should return a new vector', () => {
+      expect(new Vector(7, 9).constructor).to.equal(Vector);
     });
   });
 });

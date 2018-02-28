@@ -28,4 +28,4 @@ Object.defineProperty(Vector.prototype, 'length', {
   }
 });
 
-exports.vector = Vector;
+exports.Vector = Vector;
