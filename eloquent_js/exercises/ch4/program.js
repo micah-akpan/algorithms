@@ -45,7 +45,7 @@ exports.reverseArrayInPlace = (array) => {
 
 exports.arrayToList = (array) => {
   let arrayList = null;
-  for (let i = array.length -1; i >= 0; i -= 1) {
+  for (let i = array.length - 1; i >= 0; i -= 1) {
     arrayList = { result: array[i], rest: arrayList };
   }
   return arrayList;

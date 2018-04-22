@@ -1,3 +1,4 @@
+const { equals } = require('../../../main');
 
 /**
  * Models the 'Set' data structure
@@ -53,9 +54,15 @@ class Group {
    * @return {Boolean} - Returns true if 'value' is in 'Group', false otherwise
    */
   has(value) {
-    const idx = this.group.indexOf(value);
-    if (idx in this.group) {
-      return true;
+    if (typeof value === 'object') {
+      for (const el of this.group) {
+        if (equals(el, value)) return true;
+      }
+    } else {
+      const idx = this.group.indexOf(value);
+      if (idx in this.group) {
+        return true;
+      }
     }
 
     return false;

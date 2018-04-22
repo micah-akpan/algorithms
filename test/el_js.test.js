@@ -1,7 +1,8 @@
 const { expect, assert } = require('chai');
 const { isEven, countBs, countBs1 } = require('../eloquent_js/exercises/ch3/program');
 const {
-  range, sum, reverseArray, reverseArrayInPlace } = require('../eloquent_js/exercises/ch4/program');
+  range, sum, reverseArray, reverseArrayInPlace
+} = require('../eloquent_js/exercises/ch4/program');
 const {
   arrayToList, listToArray, prepend, nth
 } = require('../eloquent_js/exercises/ch4/program');
