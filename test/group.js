@@ -1,4 +1,5 @@
 const { expect } = require('chai');
+const { equals } = require('../main');
 const Group = require('../eloquent_js/exercises/ch6b/group');
 
 describe('Chapter 6 - 3rd Edition', () => {
@@ -56,6 +57,12 @@ describe('Chapter 6 - 3rd Edition', () => {
 
     it('should return false for removing non-existent element', () => {
       expect(aGroup.delete('4')).to.equal(false);
+    });
+
+    it('should return a new Group instance from an iterable', () => {
+      const newGroup = Group.from([3, 'Silicon Valley', 'Micah', [2, 3]]);
+      expect(newGroup instanceof Group).to.equal(true);
+      expect(newGroup.group).have.lengthOf(4);
     });
   });
 });
