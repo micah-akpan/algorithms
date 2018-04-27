@@ -118,10 +118,7 @@ const parseCreditCard2 = (str) => {
  * @return { Boolean }
  * Returns true if the object has no members, false otherwise
  */
-const isEmpty = (obj) => {
-  if (Object.keys(obj).length === 0) return true;
-  return false;
-};
+const isEmpty = obj => Object.keys(obj).length === 0;
 
 /**
  * @function extendObj
@@ -134,14 +131,14 @@ const extendObj = (...args) => {
 
   if ((emptyObj instanceof Object) && (isEmpty(emptyObj))) {
   // first argument must be an object and be empty
-    if (first) {
+    if (first !== null) {
       const firstObjkeys = Object.keys(first);
       for (let i = 0; i < firstObjkeys.length; i += 1) {
         emptyObj[firstObjkeys[i]] = first[firstObjkeys[i]];
       }
     }
 
-    if (second) {
+    if (second !== null) {
       const secondObjkeys = Object.keys(second);
       let key;
       for (let i = 0; i < secondObjkeys.length; i += 1) {

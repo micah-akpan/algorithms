@@ -142,7 +142,7 @@ describe('Extend Objects feature', () => {
       ), { name: 'Koffi', profession: 'Wrestling' });
     });
 
-    it('should return an extended object with first empty object input', () => {
+    it('should return an extended object given first empty object input', () => {
       assert.deepEqual(extendObj({}, { name: 'Ekanem' }, { age: 94 }), { name: 'Ekanem', age: 94 });
     });
   });
