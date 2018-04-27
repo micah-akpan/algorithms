@@ -54,13 +54,16 @@ class Group {
    * @return {Boolean} - Returns true if 'value' is in 'Group', false otherwise
    */
   has(value) {
-    if (typeof value === 'object') {
+    if ('object' === typeof value) {
       for (const el of this.group) {
         if (equals(el, value)) return true;
       }
     } else {
-      const idx = this.group.indexOf(value);
-      if (idx in this.group) {
+      // const idx = this.group.indexOf(value);
+      // if (idx in this.group) {
+      //   return true;
+      // }
+      if (this.group.includes(value)) {
         return true;
       }
     }
