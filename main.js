@@ -5,7 +5,7 @@
  * Returns true, if n is a prime number, false otherwise
  */
 const isPrime = (n) => {
-  for (let i = 2, flSqr = Math.floor(Math.sqrt(n) + 1); i < flSqr; i += 1) {
+  for (let i = 2; i < n; i += 1) {
     if (n % i === 0) {
       return false;
     }
