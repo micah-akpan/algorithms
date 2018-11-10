@@ -60,9 +60,7 @@ exports.listToArray = (list) => {
   return array;
 };
 
-exports.prepend = (val, list) => {
-  return { value: val, rest: list };
-};
+exports.prepend = (val, list) => ({ value: val, rest: list });
 
 exports.nth = function nth(n, list) {
   if (list === null) {
@@ -75,6 +73,7 @@ exports.nth = function nth(n, list) {
 
   return nth(n - 1, list.rest);
 };
+
 // NOTES
 // reverseArray is a pure function, it adds no side effects
 // instead it creates a new array and returns it.
@@ -83,5 +82,6 @@ exports.nth = function nth(n, list) {
 // not a pure function, it mutates the original array,
 // this has a side effect
 
-// ON Efficiency:
+// On Efficiency:
 // reverseArrayInPlace is more efficient
+// Space complexity -> O(log n)

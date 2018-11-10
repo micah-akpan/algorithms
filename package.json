@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint ./*.js ./**/* --fix"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,6 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "istanbul": "^0.4.5",
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^11.4.1"
   }

@@ -203,11 +203,19 @@ function Component(id) {
   Component.idStore.push(id);
 }
 
+function findPower(number, base, power) {
+  if (number === base) return power;
+  return findPower(number / base, base, power + 1);
+}
 
-exports.getPrimes = getPrimes;
-exports.isComposite = isComposite;
-exports.parseCreditCard = parseCreditCard;
-exports.parseCreditCard2 = parseCreditCard2;
-exports.extendObj = extendObj;
-exports.equals = equals;
-exports.Component = Component;
+
+module.exports = {
+  getPrimes,
+  isComposite,
+  parseCreditCard,
+  parseCreditCard2,
+  extendObj,
+  equals,
+  Component,
+  findPower
+};

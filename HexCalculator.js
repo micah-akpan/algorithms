@@ -1,6 +1,6 @@
 /**
- * @params {int} n
- * returns the decimal equivalent of the hexadecimal n
+ *@param {String} n String representation of the Hexadecimal
+ *@return The decimal equivalent of the hexadecimal n
 */
 
 const hexToDecimal = (n) => {
@@ -42,5 +42,7 @@ const decToHex = (dec) => {
   return dec.toString(baseValue);
 };
 
-module.exports.hexToDecimal = hexToDecimal;
-module.exports.decToHex = decToHex;
+module.exports = {
+  hexToDecimal,
+  decToHex
+};

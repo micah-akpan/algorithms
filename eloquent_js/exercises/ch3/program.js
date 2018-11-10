@@ -1,6 +1,6 @@
 /**
  * @function isEven
- * @param {Number}
+ * @param {Number} number
  * @return {Boolean}
  * Returns true if a number is even, false otherwise
  */
@@ -12,8 +12,8 @@ const isEven = (number) => {
 
 /**
  * @function countChar
- * @param {String}
- * @param {String}
+ * @param {String} string
+ * @param {String} char
  * @returns {Number}
  * Returns the number of 'char' found in 'string'
  */
@@ -31,7 +31,7 @@ const countChar = (string, char) => {
 
 /**
  * @function countBs
- * @param {String}
+ * @param {String} string
  * @return {Number}
  * Returns the number of 'B' found in string
  */
@@ -39,7 +39,7 @@ const countBs = string => countChar(string, 'B');
 
 /**
  * @function countBs1
- * @param {String}
+ * @param {String} string
  * @return {Number}
  * Returns the number of 'B's found in string
  */
@@ -48,6 +48,8 @@ const countBs1 = (string) => {
   return allBs.length;
 };
 
-exports.isEven = isEven;
-exports.countBs = countBs;
-exports.countBs1 = countBs1;
+module.exports = {
+  isEven,
+  countBs,
+  countBs1
+};

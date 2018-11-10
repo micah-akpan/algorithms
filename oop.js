@@ -29,9 +29,9 @@ class Piano extends MusicalInstrument {
 
 class Guitar extends MusicalInstrument {
   constructor(
-name, family, isElectricallyOperated, placeOfOrigin,
+    name, family, isElectricallyOperated, placeOfOrigin,
     type, amplificationMethod, materials
-) {
+  ) {
     super(name, family, isElectricallyOperated, placeOfOrigin, materials);
     this.type = type;
     this.amplificationMethod = amplificationMethod;
@@ -71,7 +71,7 @@ class Saxophone extends MusicalInstrument {
 // drive tests of the classes
 
 const electric = new Guitar(
-'Electric Guitar', 'string', false, 'Italy',
+  'Electric Guitar', 'string', false, 'Italy',
   'electric', 'electricity and amplifier', ['wood']
 );
 

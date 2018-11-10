@@ -54,7 +54,7 @@ class Group {
    * @return {Boolean} - Returns true if 'value' is in 'Group', false otherwise
    */
   has(value) {
-    if ('object' === typeof value) {
+    if (typeof value === 'object') {
       for (const el of this.group) {
         if (equals(el, value)) return true;
       }

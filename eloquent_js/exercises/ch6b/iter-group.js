@@ -1,29 +1,29 @@
 const Group = require('./group');
 
 class GroupIterator {
-    constructor(group) {
-        this.group = group;
-        this.iterIdx = 0;
+  constructor(group) {
+    this.group = group;
+    this.iterIdx = 0;
+  }
+
+  next() {
+    if (this.iterIdx == this.group.group.length) {
+      return { done: true };
     }
 
-    next() {
-        if (this.iterIdx == this.group.group.length) {
-            return { done: true };
-        }
+    this.iterIdx++;
+    const idx = this.iterIdx;
 
-        this.iterIdx++;
-        let idx = this.iterIdx;
+    const value = {
+      [idx]: this.group.group[idx]
+    };
 
-        let value = {
-            [idx]: this.group.group[idx]
-        };
-
-        return {
-            value, done: false
-        }
-    }
+    return {
+      value, done: false
+    };
+  }
 }
 
-Group.prototype[Symbol.iterator] = function() {
-    return new GroupIterator(this);
-}
+Group.prototype[Symbol.iterator] = function () {
+  return new GroupIterator(this);
+};

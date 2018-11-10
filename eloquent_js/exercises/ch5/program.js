@@ -1,4 +1,5 @@
 const ANCESTRY_FILE = require('./ancestry');
+
 const ancestry = JSON.parse(ANCESTRY_FILE);
 
 exports.flatten = array => array.reduce((prev, curr) => prev.concat(curr));
@@ -42,15 +43,11 @@ ancestry.forEach((person) => {
 });
 
 // const differencesInAge = ancestry.filter(person => personByName[person.mother] !== null)
-  // .map(person => person.born - personByName[person.mother].born);
+// .map(person => person.born - personByName[person.mother].born);
 
-const personsWithMothers = ancestry.filter((person) => {
-  return personByName[person.mother] !== undefined;
-});
+const personsWithMothers = ancestry.filter(person => personByName[person.mother] !== undefined);
 
-const differencesInAge = personsWithMothers.map((person) => {
-  return person.born - personByName[person.mother].born;
-});
+const differencesInAge = personsWithMothers.map(person => person.born - personByName[person.mother].born);
 
 
 exports.differencesInAge = differencesInAge;

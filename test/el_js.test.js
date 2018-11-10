@@ -149,8 +149,8 @@ describe('Chapter 4 Exercises Test', () => {
   describe('nth', () => {
     it('should return undefined if given a null list', () => {
       expect(nth(1, null)).to.equal(undefined);
-    })
-  })
+    });
+  });
 });
 
 describe('Chapter 5 Test', () => {
